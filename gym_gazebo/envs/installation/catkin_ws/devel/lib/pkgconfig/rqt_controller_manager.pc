@@ -1,0 +1,8 @@
+prefix=/home/zjh/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel
+
+Name: rqt_controller_manager
+Description: Description of rqt_controller_manager
+Version: 0.18.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

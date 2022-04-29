@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -O3  -rdynamic CMakeFiles/get_serial_number.dir/get_serial_number.cpp.o  -o /home/zjh/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel/lib/kobuki_ftdi/get_serial_number  -lusb 

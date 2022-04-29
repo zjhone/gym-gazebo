@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/ar_track_alvar" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/catkin_simple" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/catkin_simple/test/scenarios/hello_world/catkin_simple" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/control_toolbox" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/driver_base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/ecl_core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/ecl_lite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/ecl_navigation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/ecl_tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/gazebo_ros_pkgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/hector_gazebo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/image_common" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/joystick_drivers" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/kobuki" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/kobuki_core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/kobuki_desktop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/kobuki_msgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/navigation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/pcl_ros" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/realtime_tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/ros_control" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/roslint" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/turtlebot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/turtlebot_create" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/turtlebot_simulator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/xacro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/yocs_msgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/envs/installation/catkin_ws/src/yujin_ocs" vcs="Git" />
+  </component>
+</project>

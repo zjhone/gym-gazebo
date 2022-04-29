@@ -1,0 +1,8 @@
+prefix=/home/zjh/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/install
+
+Name: yocs_virtual_sensor
+Description: Description of yocs_virtual_sensor
+Version: 0.8.2
+Cflags: -I${prefix}/include -I/usr/local/include
+Libs: -L${prefix}/lib /usr/local/lib/libboost_system.so.1.71.0
+Requires: tf roscpp sensor_msgs geometry_msgs yocs_msgs yocs_math_toolkit
