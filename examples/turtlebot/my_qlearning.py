@@ -14,7 +14,7 @@ import os
 import liveplot
 import matplotlib.pyplot as plt
 
-
+###
 class QLearn:
     def __init__(self, actions, epsilon, alpha, gamma):
         self.q = {}
