@@ -21,7 +21,7 @@ class QLearn:
             self.q[(state, action)] = reward
         else:
             self.q[(state, action)] = oldv + self.alpha * (value - oldv)
-        print('\n', self.q)
+        # print('\n', self.q)
 
     def chooseAction(self, state, return_q=False):
         q = [self.getQ(state, a) for a in self.actions]
