@@ -33,6 +33,10 @@ class Monitor(Wrapper):
 
         return observation, reward, done, info
 
+    def getModelStates(self):
+        return self.env.getModelStates()
+
+
     def reset(self, **kwargs):
         self._before_reset()
         observation = self.env.reset(**kwargs)

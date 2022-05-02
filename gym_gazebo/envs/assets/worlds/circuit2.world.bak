@@ -88,11 +88,5 @@
       <uri>model://Circuit_ql_2</uri>
       <pose>0 -3.85 0 0 0 1.567</pose>
     </include>
-	<!-- Set a Target -->
-    <include>
-      <uri>model://Target</uri>
-      <pose>3.6 -3.6 0 0 0 0</pose>
-    </include>
- 
   </world>
 </sdf>

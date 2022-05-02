@@ -36,7 +36,7 @@ class QLearn:
             self.q[(state, action)] = reward
         else:
             self.q[(state, action)] = oldv + self.alpha * (value - oldv)
-        print('\n', self.q)
+        # print('\n', self.q)
 
     def chooseAction(self, state, return_q=False):
         q = [self.getQ(state, a) for a in self.actions]
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     last_time_steps = numpy.ndarray(0)
 
     qlearn = QLearn(actions=range(env.action_space.n),
-                    alpha=0.2, gamma=0.9, epsilon=0.9)
+                    alpha=0.2, gamma=0.9, epsilon=0.5)
 
     initial_epsilon = qlearn.epsilon
 
@@ -105,14 +105,16 @@ if __name__ == '__main__':
 
         observation = env.reset()
 
-        if qlearn.epsilon > 0.05:
-            qlearn.epsilon *= epsilon_discount
+        # if qlearn.epsilon > 0.05:
+        #     qlearn.epsilon *= epsilon_discount
 
         # render() #defined above, not env.render()
 
         state = ''.join(map(str, observation))
 
         for i in range(1500):
+
+            # env.getModelStates()
 
             # Pick an action based on the current state
             action = qlearn.chooseAction(state)
