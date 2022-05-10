@@ -91,7 +91,7 @@
 	<!-- Set a Target -->
     <include>
       <uri>model://Target</uri>
-      <pose>3.6 -3.6 0 0 0 0</pose>
+      <pose>0.5 -4.0 0 0 0 0</pose>
     </include>
  
   </world>

@@ -13,6 +13,10 @@ import os
 # import qlearn
 import liveplot
 import matplotlib.pyplot as plt
+import my_func.list_deal as md
+from matplotlib.font_manager import FontProperties  # 解决中文无法正常显示问题
+fname = "/media/zjh/SDXC/linux-tools/font/simhei.ttf"
+myfont = FontProperties(fname=fname)
 
 #####
 class QLearn:
@@ -88,14 +92,17 @@ if __name__ == '__main__':
     last_time_steps = numpy.ndarray(0)
 
     qlearn = QLearn(actions=range(env.action_space.n),
-                    alpha=0.2, gamma=0.9, epsilon=0.5)
+                    alpha=0.2, gamma=0.9, epsilon=0.95)
 
     initial_epsilon = qlearn.epsilon
 
     epsilon_discount = 0.9986
+    # epsilon_discount = 0.9980
+    # epsilon_discount = 0.95
+    # epsilon_discount = 0.98
 
     start_time = time.time()
-    total_episodes = 3000
+    total_episodes = 2000
     highest_reward = 0
 
     for x in range(total_episodes):
@@ -105,8 +112,8 @@ if __name__ == '__main__':
 
         observation = env.reset()
 
-        # if qlearn.epsilon > 0.05:
-        #     qlearn.epsilon *= epsilon_discount
+        if qlearn.epsilon > 0.05:
+            qlearn.epsilon *= epsilon_discount
 
         # render() #defined above, not env.render()
 
@@ -114,7 +121,7 @@ if __name__ == '__main__':
 
         for i in range(1500):
 
-            # env.getModelStates()
+            env.getModelStates()
 
             # Pick an action based on the current state
             action = qlearn.chooseAction(state)
@@ -138,22 +145,42 @@ if __name__ == '__main__':
                 last_time_steps = numpy.append(last_time_steps, [int(i + 1)])
                 break
 
-        # if x%5==0:
-        plotter.plot(env)
+        if x%10==0:
+            plotter.plot(env)
 
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
         print("EP: "+str(x+1)+" - [alpha: "+str(round(qlearn.alpha,2))+" - gamma: "+str(round(qlearn.gamma,2))+" - epsilon: "+str(round(qlearn.epsilon,2))+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s))
+
+    ERS = wrappers.Monitor.get_episode_rewards(env)
+    env.close()
+    plotter.close()
 
     print("\n\n")
     print("===============================================================")
     #Github table content
     print("\n|"+str(total_episodes)+"|"+str(qlearn.alpha)+"|"+str(qlearn.gamma)+"|"+str(initial_epsilon)+"*"+str(epsilon_discount)+"|"+str(highest_reward)+"| PICTURE |")
 
+    ##########################################################
+    plt.figure(1)  # 分析累积奖励变化曲线
+    plt.grid()
+    plt.plot(ERS, color ='b')
+    plt.plot(md.my_reshape(ERS, 10), color='r')
+    # plt.plot(md.cumulative(DELTA),color='y')
+    plt.plot(md.list_fit(ERS, 5), color='k')
+    plt.rcParams['font.sans-serif'] = ['Ubuntu']  # 用来正常显示中文标签
+    plt.xlabel('episode', fontproperties=myfont)
+    plt.ylabel('cumulated reward', fontproperties=myfont)
+    plt.title("Q-Learning")
+    plt.show()
+    ##########################################################
+
     l = last_time_steps.tolist()
     l.sort()
     print("last_time_steps.tolist: ", l)
-    plt.plot(l)
+    plt.figure(2)
+    plt.plot(l)   # # 分析机器人步数变化曲线
+    plt.grid()
     plt.show()
     #print("Parameters: a="+str)
     print("Overall score: {:0.2f}".format(last_time_steps.mean()))
@@ -162,4 +189,4 @@ if __name__ == '__main__':
     print("===============================================================")
     print("\n\n")
 
-    env.close()
+
